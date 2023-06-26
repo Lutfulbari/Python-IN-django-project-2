@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for movie in movies %}
+<a href="{% url 'oneMovie' movie.id %}">
+    
+<h2 align="center"> {{ movie.name }} </h2>
+</a>
+<br>
+
+
+
+{% endfor  %}
+{% endblock content %}

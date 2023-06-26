@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h2 align="center"> {{ movie.name }} </h2><br>
+
+<h2 align="center"> {{ date }} </h2><br>
+<h2 align="center">  Actors  </h2><br>
+
+
+
+{% for actor in movie.actors.all  %}
+
+<a href="{% url 'oneActor' actor.id %}">
+<p align="center">{{ actor.name }} </p>
+</a>
+
+{% endfor  %}
+
+<h2 align="center"> Directors </h2><br>
+{% for director in movie.directors.all  %}
+
+<p align="center">{{ director.name }} </p>
+
+
+{% endfor  %}
+{% endblock content %}
